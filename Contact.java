@@ -6,30 +6,33 @@ public class Contact {
     public String phoneNumber; 
     public String city ;
     public String state ;
+    public String email;
     
     
-    public Contact(String firstName, String lastName, String phoneNumber, String city, String state) {
+    public Contact(String firstName, String lastName, String phoneNumber, String city, String state,String mail) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNumber = phoneNumber;
 		this.city = city;
 		this.state = state;
+		this.email=email;
 	}
 
 
-//	public Contact() {
-//    	this.firstName = firstName;
-//    	this.lastName = lastName;
-//    	this.phoneNumber = phoneNumber;
-//    	this.city = city;
-//    	this.state = state;
-//    }
-//    
+	public Contact() {
+    	this.firstName = firstName;
+    	this.lastName = lastName;
+    	this.phoneNumber = phoneNumber;
+    	this.city = city;
+    	this.state = state;
+    	this.email=email;
+    }
     
-    @Override
+
+	@Override
 	public String toString() {
 		return "Contact [firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber=" + phoneNumber
-				 + ", city=" + city + ", state=" + state + "]";
+				 + ", city=" + city + ", state=" + state + ", email=" + email + "]";
 	}
 
 	public String getFirstName() {
@@ -71,6 +74,16 @@ public class Contact {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	
