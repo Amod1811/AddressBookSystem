@@ -18,7 +18,6 @@ public class Contact {
 		this.email=email;
 	}
 
-
 	public Contact() {
     	this.firstName = firstName;
     	this.lastName = lastName;
