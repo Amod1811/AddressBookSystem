@@ -17,7 +17,6 @@ public class Contact {
 		this.state = state;
 		this.email=email;
 	}
-
 	public Contact() {
     	this.firstName = firstName;
     	this.lastName = lastName;
@@ -58,7 +57,6 @@ public class Contact {
 		this.phoneNumber = phoneNumber;
 	}
 
-	
 	public String getCity() {
 		return city;
 	}
