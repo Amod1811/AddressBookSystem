@@ -16,7 +16,7 @@ public class Address {
 				 System.out.println("menu of AddressBook");
 				 boolean Check = false;
 				 do {
-					 System.out.println("Enter your choice\n 1.Add Contact\n 2.Edit contact\n 3.display\n 4.Exit");
+					 System.out.println("Enter your choice\n 1.Add Contact\n 2.Edit contact\n 3.Delete Contact\n 4.display\n 5.Exit");
 					 int option = sc.nextInt();
 					 switch(option) {
 					 case 1 : addContact();
@@ -25,9 +25,11 @@ public class Address {
 					 case 2 : editContact();
 					 System.out.println("Contact edit successfully");
 					 break;
-					 case 3 : display();
+					 case 3 : deleteContact();
+					 System.out.println("Contact delete Successfully");
+					 case 4 : display();
 					 break;
-					 case 4 : Check =true;
+					 case 5 : Check =true;
 					 default : System.out.println("Please a choose valid option");
 					 break;
 					 }
@@ -98,6 +100,26 @@ public class Address {
 			    }
 			 
 			 
-			
+			// Method to delete contacts of Address Book
+			    public void deleteContact() {
+			        System.out.println("Enter original first name for verification :");
+			        String deleteName = sc.next();
+
+			        if (deleteName.equals(contact.getFirstName())) {
+			            contact.setFirstName(null);
+			            contact.setLastName(null);
+			            contact.setPhoneNumber(null);
+			            contact.setCity(null);
+			            contact.setState(null);
+			            contact.setEmail(null);
+			            System.out.println("deleted successfully...");
+			            System.out.println();
+			        } else {
+			            System.out.println("Invalid first name");
+			            System.out.println("Please Enter valid first name");
+			            System.out.println();
+			            deleteContact();
+			        }
+			    }
 }
 
