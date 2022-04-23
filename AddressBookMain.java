@@ -13,6 +13,7 @@ public class AddressBookMain {
 		address.getmenu();
 		address.addContact();
 		address.display();
+		address.deleteContact();
 		
 	}
 }
