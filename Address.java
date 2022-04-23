@@ -10,7 +10,8 @@ import java.util.Scanner;
 public class Address {
 	Contact contact;
 	Scanner sc = new Scanner(System.in);
-			
+	ArrayList<Contact> contactList = new ArrayList<Contact>();
+
 			public void getmenu() {
 				Scanner sc = new Scanner(System.in);
 				 System.out.println("menu of AddressBook");
@@ -67,7 +68,7 @@ public class Address {
 			        System.out.println(contact);
 			        System.out.println();
 			    }
-			 
+			 // method to display the contact of Address Book
 			 public void display() {
 			        String firstName1 = contact.getFirstName();
 			        System.out.println("First Name : " + firstName1);
@@ -84,42 +85,78 @@ public class Address {
 			        System.out.println();
 			 }
 
-			        
+			        // method to edit exiting contact
 			 public void editContact() {
 			        System.out.println("Please Enter original first name to edit : ");
-			        String editName = sc.nextLine();
+			        String editName = sc.next();
+			        if (contactList.isEmpty()) {
+			            System.out.println("Contact list is empty");
+			        } else {
+			            for (int i = 0; i < contactList.size(); i++) {
+			                String name = contactList.get(i).getFirstName();
 
 			        if (editName.equalsIgnoreCase(contact.getFirstName())) {
-			            addContact();
-			        } else {
+			        	System.out.println("Enter the first name : ");
+	                    String firstName = this.sc.next();
+	                    System.out.println("Enter the last name : ");
+	                    String lastName = this.sc.next();
+	                    System.out.println("Enter the address : ");
+	                    String address = this.sc.next();
+	                    System.out.println("Enter the city : ");
+	                    String city = this.sc.next();
+	                    System.out.println("Enter the state : ");
+	                    String state = this.sc.next();
+	                    System.out.println("Enter the Phone Number : ");
+	                    String phoneNumber = this.sc.next();
+	                    System.out.println("Enter Email id : ");
+	                    String email = this.sc.next();
+
+	                    contactList.get(i).setFirstName(firstName);
+	                    contactList.get(i).setLastName(lastName);
+	                    contactList.get(i).setCity(city);
+	                    contactList.get(i).setState(state);
+	                    contactList.get(i).setPhoneNumber(phoneNumber);
+	                    contactList.get(i).setEmail(email);
+
+	                    System.out.println();
+	                    System.out.println(contactList.get(i));
+	                    System.out.println("Contact edited successfully");
+	                    System.out.println();
+			        }
+			            
+			         else {
 			            System.out.println("Invalid first name");
 			            System.out.println("Please Enter valid first name");
 			            System.out.println();
 			            editContact();
 			        }
 			    }
-			 
+			 } 
+		 }
 			 
 			// Method to delete contacts of Address Book
 			    public void deleteContact() {
 			        System.out.println("Enter original first name for verification :");
 			        String deleteName = sc.next();
 
+			        if (contactList.isEmpty()) {
+			            System.out.println("Contact list is empty");
+			        } else {
+			            for (int i = 0; i < contactList.size(); i++) {
 			        if (deleteName.equals(contact.getFirstName())) {
-			            contact.setFirstName(null);
-			            contact.setLastName(null);
-			            contact.setPhoneNumber(null);
-			            contact.setCity(null);
-			            contact.setState(null);
-			            contact.setEmail(null);
+			        	contactList.remove(i);
 			            System.out.println("deleted successfully...");
 			            System.out.println();
+			            System.out.println("Updated Contact list : ");
+	                    System.out.println(contactList);
 			        } else {
 			            System.out.println("Invalid first name");
 			            System.out.println("Please Enter valid first name");
 			            System.out.println();
 			            deleteContact();
-			        }
-			    }
+		        }
+		    }
+       }
+    }
 }
 
