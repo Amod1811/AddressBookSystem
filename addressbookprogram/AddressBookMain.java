@@ -2,7 +2,7 @@ package bl.com.addressbookprogram;
 
 import java.util.Scanner;
 
-/*Ability to add multiple person to addressbook
+/*Ability to ensure there is no Duplicate contact in AddressBook
  */
 public class AddressBookMain {
     public static void main(String[] args) {
@@ -16,7 +16,7 @@ public class AddressBookMain {
             System.out.println(" ADDRESS BOOK SYSTEM MENU : ");
             System.out.println("1. ADD NEW ADDRESSBOOK \n2. EDIT ADDRESSBOOK \n3. DELETE ADDRESSBOOK" +
                     "\n4. DISPLAY ADDRESSBOOKS \n5. EXIT");
-            System.out.println("Please Select the Operation Number : ");
+            System.out.println("Please Select the Operation  : ");
             choice = sc.next();
 
             switch (choice) {
